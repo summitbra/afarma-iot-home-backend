@@ -15,7 +15,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 COPY --from=0 /target/*.jar  /app.jar
 
-COPY certificate certificate
 
 EXPOSE 8080
 CMD ["java", "-jar", "/app.jar"]
