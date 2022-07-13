@@ -10,12 +10,12 @@ import java.util.List;
 @Repository
 public interface EventsRepository extends JpaRepository<DosageCountDTO, Long > {
 
-    @Query(value = "SELECT COUNT(*) as dosage_count FROM `afarma-iot-events`.events " +
+    @Query(value = "SELECT COUNT(*) as dosage_count, 'Doses no horário' as message FROM `afarma-iot-events`.events " +
             "WHERE  is_late = false AND event_name = 'MEDICACAO_TOMADA' ", nativeQuery = true)
     List<DosageCountDTO> findEvents();
 
 
-    @Query(value = "SELECT COUNT(*) as dosage_count FROM `afarma-iot-events`.events ", nativeQuery = true)
+    @Query(value = "SELECT COUNT(*) as dosage_count, 'Lembretes enviados' as message FROM `afarma-iot-events`.events ", nativeQuery = true)
     List<DosageCountDTO> findTotalEvents();
 
 
