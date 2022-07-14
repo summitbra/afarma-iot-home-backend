@@ -2,7 +2,9 @@ package com.summitbra.afarma.iot.home.backend.controllers;
 
 import com.summitbra.afarma.iot.home.backend.data.DosageCountDTO;
 import com.summitbra.afarma.iot.home.backend.data.ResidentCountDTO;
+import com.summitbra.afarma.iot.home.backend.responses.ResponseMedia;
 import com.summitbra.afarma.iot.home.backend.services.HomeService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,5 +37,15 @@ public class HomeController {
     @GetMapping("/events")
     public List<DosageCountDTO> listEvents() {
         return homeService.findEvents();
+    }
+
+    @GetMapping("/media")
+    public ResponseEntity<Object> findMedia() {
+        return homeService.findMedia();
+    }
+
+    @GetMapping("/graphic")
+    public ResponseEntity<Object> findGraphicValues() {
+        return homeService.findGraphicValues();
     }
 }
