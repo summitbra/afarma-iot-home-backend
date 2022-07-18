@@ -8,7 +8,7 @@ public class ResponseMedia {
 
     public ResponseMedia(String media) {
         this.media = media;
-        this.phrase = "Ádesão Média";
+        this.phrase = "Adesão Média";
     }
 
     public String getMedia() {
